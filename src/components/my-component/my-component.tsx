@@ -1,5 +1,9 @@
 import { Component, Element, h } from '@stencil/core';
 
+/**
+ * Recieves children via a slot, uses querySelector to find slotted children.
+ * Demonstrates the differences between connectedCallback and componentWillLoad.
+ */
 @Component({
   tag: 'my-component',
   shadow: false
@@ -27,7 +31,7 @@ export class MyComponent {
 
   render() {
     return (
-      <div class="hello">
+      <div>
         <slot />
       </div>
     );
