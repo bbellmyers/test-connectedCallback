@@ -11,8 +11,8 @@
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
-    "start": "stencil build --dev --watch --serve",
+    "build": "rimraf www && stencil build --docs",
+    "start": "rimraf www && stencil build --dev --watch --serve",
     "serve": "npm run build && concurrently 'serve .' 'open http://localhost:5000/' ",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
@@ -22,7 +22,8 @@
     "serve": "^11.3.2"
   },
   "devDependencies": {
-    "@stencil/core": "2.3.0"
+    "@stencil/core": "2.3.0",
+    "rimraf": "^3.0.2"
   },
   "license": "MIT"
 }
